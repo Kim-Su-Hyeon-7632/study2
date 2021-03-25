@@ -1,0 +1,294 @@
+@charset "UTF-8";
+
+* {
+  margin: 0; padding: 0;
+  font-size: 14px;
+   line-height: 1.5; 
+  color: #222328;
+  text-decoration: none; 
+  box-sizing: border-box;
+  list-style: none;
+}
+/* comm */
+.blind {
+  overflow: hidden;
+  font-size: 0;line-height: 0;
+  text-indent: -9999px;
+}
+/* 비활성화 탭 */
+.tab .tit-tab a {
+  height: 50px;
+  display: block;
+  background-color: #eee;
+  text-align: center;
+  line-height: 50px;
+  border-bottom: 3px solid rgb(22, 38, 110);
+}
+/* 활성화 탭 */
+.tab .on .tit-tab a {
+  background-color: rgb(22, 38, 110);
+  color: #fff;
+}
+.tab .on .cont-tab {
+  display: block;
+}
+.tab {
+  position: relative;
+  /* overflow: hidden; */
+}
+.tab .cont-tab {
+  display: none;
+  position: absolute; top: 53px; left: 0;
+  width: 360px;
+  
+}
+.tab .cont-tab img {
+  height: 128px;
+  object-fit: cover;
+  padding-top: 6px;
+  object-position: 100% 50%;
+} 
+
+.wrap {
+  width: 1200px; margin: 0 auto;
+  /* background-color: #eee; */
+}
+header {
+  display: flex; justify-content: space-between;
+  height: 100px; 
+  background: #fff;
+  position: relative;
+}
+.logo a {
+  display: block;
+  width: 125px; height: 100px;
+  background: url(../images/logo-kakaoi.svg) 0 50% no-repeat;
+  text-indent: -9999px;
+}
+footer .logo {
+  margin-left: 10px;
+}
+
+nav {
+  display: flex; align-items: center;
+  /* width: 40%; */
+  /* margin-right: -40px; */
+}
+.nav-depth1 {
+  display: flex; justify-content: space-between;
+  width: 100%;
+}
+.nav-depth1 > li > a {
+  display: block;
+  height: 100px; padding: 0 40px;
+  line-height: 100px; 
+  /* text 수직 가운데 정렬 line-height값을 엄마 태그의 높이값 */
+}
+.nav-depth1 > li {
+  position: relative;
+  
+}
+.nav-depth1>li:hover>a {
+  color: rgb(72, 74, 201);
+  border-bottom: 1px solid rgb(72, 74, 201);
+}
+/* 활성화 되는 설정이 없어지지 않도록 hover의 위치를 바꾼다.
+엄마 태그 li에 오버했을 때 a에 적용= li 도 적용되고 동시에  a 도 적용된다. */
+
+/* mouse-out */
+.nav-depth2 {
+  /* display: none; */ 
+  position: absolute; top: 100px; left:0;
+  /* background-color: #fff; */
+  z-index: 100;
+  width: 100%; height: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+/* mause-over */
+nav:hover .nav-depth2, nav:hover .nav-bg{
+  height: 140px;
+  padding-top: 10px;
+  
+}
+.nav-depth2 a {
+  display: block;
+  padding: 5px 0;
+  text-align: center;
+  
+}
+.nav-depth2 a:hover {
+  background-color: rgb(169, 190, 223);
+}
+
+.nav-bg {
+  /* display: none; */
+  background-color: rgb(255, 255, 255);
+  width: 100%; height: 0px;
+  position: absolute; top: 100px; left: 0;
+  z-index: 50;
+  border-top: 1px solid #eee;
+  transition: height 0.5s;
+}
+.slide {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide ul {
+  display: flex;
+  position: absolute; top: 0; left: 0; 
+}
+
+.container {
+  display: flex; justify-content: space-between;
+  height: 200px; padding: 10px 0;
+}
+.container .tab, .container > section {
+  width: 30%;
+}
+
+.container .tab {
+  display: flex;
+  
+}
+/* 탭 안에 있는 컨텐츠 두개를 정렬하고 싶을 때는 엄마 속성인 탭에게 
+디스플레이 적용함 */
+
+.sec-bbs {
+  width: 50%; 
+}
+/* 박스의 50프로만 차게.... */
+.sec-gallery {
+  width: 50%;
+}
+/* 공지사항 */
+/* 1. 글 앞에 아이콘(점) 추가 */
+/* 2. 줄간격 넓히기 */
+/* 3. 말줄임 */
+
+.sec-bbs .cont-tab a {
+  display: block;
+  padding: 6px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sec-bbs .cont-tab a::before {
+  display: inline-block;
+  content: '';
+  width: 5px;height: 5px;
+  margin: -5px 5px 0 0;
+  background: red;
+  vertical-align: middle;
+}
+.sec-gallery ul {
+  display: flex; 
+  justify-content: space-between;
+}
+.sec-gallery li {
+  width: 30%;
+}
+.sec-gallery a {
+  display: block;
+  
+}
+.sec-gallery img {
+  width: 100%;
+}
+.sec-bnr a {
+  display: block;
+}
+.sec-bnr img {
+  width: 100%;
+  width: 360px; height: 180px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.sec-goto .cont {
+  display: flex; align-items: center;
+  height: 100%;
+}
+.sec-goto a {
+  display: block;
+  height: 50px; padding-left: 60px;
+  line-height: 50px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+}
+.sec-goto li:first-child a {
+  background-image: url(../images/ico-goto1.png);
+}
+.sec-goto li:nth-child(2) a {
+  background-image: url(../images/ico-goto2.png);
+}
+.sec-goto li:nth-child(3) a {
+  background-image: url(../images/ico-goto3.png);
+}
+.sec-goto li:last-child a {
+  background-image: url(../images/ico-goto4.png);
+}
+.sec-goto .lst-goto {
+  display: flex;flex-wrap: wrap;
+  justify-content: space-between;
+}
+.lst-goto li {
+  width: 50%; 
+  margin-bottom: 20px;
+}
+
+
+footer {
+  display: flex; justify-content: space-between;
+  background-color: #999;
+}
+.copyright {
+  margin-top: 40px;
+  color: #fff;
+}
+.lst-sns {
+  display: flex;
+  margin-top: 20px;
+}
+.lst-sns a {
+  display: block;
+  padding: 20px; color: #fff;
+}
+.modal-wrap {
+  display: none; 
+  position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* display: none; */
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+.modal-wrap .inner {
+  width: 668px; height: 553px;
+  position: relative;
+}
+.modal-wrap img {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 33px;
+  /* overflow: hidden; */
+}
+.modal-wrap button {
+  /* position: fixed; top: 20px; left: 910px; right: 0; bottom: 10px; */
+  position: absolute; top: -20px; right: -20px;
+  background-color: #fff;
+  width: 70px; height: 70px; border-radius: 50%;
+  /* z-index: 101; */
+  border: none;
+  cursor: pointer;
+  display: flex; justify-content: center; align-items: center;
+  /* input은 커서모양이 손가락으로 자동 설정이 안되기 때문에 따로 설정해 줘야 한다. */
+  /* 닫기 대신에 엑스 모양을 넣고 싶을 떄에는 백그라운드 이미지로 넣고 텍스트는 없애준다.(텍스트 인덴트-9999) */
+  /* 라인어썸 써도 됨 */
+}
+.modal-wrap i{
+  font-size: 2em;
+  /* display: block;
+  margin-top: 20px; */
+}
